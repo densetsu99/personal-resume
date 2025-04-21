@@ -20,15 +20,25 @@
       --font-heading: 'Montserrat', sans-serif;
       --font-body: 'Open Sans', sans-serif;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: var(--font-body);
       background: var(--secondary);
       color: var(--text-dark);
       line-height: 1.6;
     }
-    a { color: var(--accent); text-decoration: none; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     /* Sticky Navigation */
     nav {
       position: sticky;
@@ -44,14 +54,15 @@
     nav a {
       font-family: var(--font-heading);
       color: var(--light-alt);
+      display: inline-block;
       padding: 1rem 1.5rem;
-      display: block;
-      transition: background 0.3s;
+      transition: color 0.3s;
     }
     nav a:hover {
-      background: var(--accent);
+      color: var(--accent);
     }
-    /* Hero Section with Clip-Path */
+
+    /* Hero Section with Diagonal Clip-Path */
     header.hero {
       height: 300px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -72,6 +83,7 @@
       font-size: 1.2rem;
       font-weight: 600;
     }
+
     /* Main Container */
     .container {
       max-width: 800px;
@@ -81,6 +93,7 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       border-radius: 8px;
     }
+
     /* Section Titles */
     section {
       margin-bottom: 3rem;
@@ -100,11 +113,13 @@
       height: 4px;
       background: var(--accent);
     }
-    /* About */
+
+    /* About Me */
     #about p {
       text-align: justify;
     }
-    /* Timeline for Experience */
+
+    /* Experience Timeline */
     .timeline {
       position: relative;
       padding-left: 30px;
@@ -136,13 +151,16 @@
     .timeline-item h3 {
       font-family: var(--font-heading);
       color: var(--primary);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.3rem;
     }
     .timeline-item em {
-      color: var(--text-light);
+      display: block;
       font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
     }
-    /* Education Cards with Hover Effect */
+
+    /* Education Cards */
     .education-item {
       background: var(--secondary);
       padding: 1rem;
@@ -159,9 +177,12 @@
       margin-bottom: 0.3rem;
     }
     .education-item em {
-      color: var(--text-light);
+      display: block;
       font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
     }
+
     /* Skills with CSS-Only Progress Bars */
     ul.skills {
       list-style: none;
@@ -169,7 +190,7 @@
     ul.skills li {
       margin-bottom: 1.5rem;
     }
-    .skills span {
+    ul.skills li span {
       display: block;
       font-weight: 600;
       margin-bottom: 0.5rem;
@@ -192,15 +213,18 @@
       from { width: 0; }
       to { width: var(--progress); }
     }
-    /* Contact */
+
+    /* Contact Section */
     #contact p {
       margin-bottom: 0.5rem;
     }
+
     /* Footer */
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: var(--text-light);
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -216,27 +240,27 @@
     </ul>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <header class="hero">
     <h1>G Prajwal Varma</h1>
     <p>Aspiring Entrepreneur</p>
   </header>
 
   <div class="container">
-    <!-- About -->
+    <!-- About Me -->
     <section id="about">
       <h2>About Me</h2>
       <p>I am a highly ambitious individual driven by significant goals and a passion for innovation. Currently, I am pursuing Economics, Mathematics, and Statistics at SJCC alongside a BBA program at IIM Bangalore, where I am developing the skills to turn visionary ideas into reality.</p>
     </section>
 
-    <!-- Experience -->
+    <!-- Experience Timeline -->
     <section id="experience">
       <h2>Experience</h2>
       <div class="timeline">
         <div class="timeline-item">
           <h3>Founder – Kaizen Club, JIRS</h3>
           <em>JUNE 2022 – MAY 2024</em>
-          <p>Established and led a student club focused on continuous improvement and innovation, successfully raising ₹600,000 in donations within two months to fund community projects specifically donated to charitable organizations.</p>
+          <p>Established and led a student club focused on continuous improvement and innovation, successfully raising ₹600,000 in donations within two months to fund community projects.</p>
         </div>
         <div class="timeline-item">
           <h3>Intern – Inspirit AI</h3>
@@ -251,7 +275,7 @@
       </div>
     </section>
 
-    <!-- Education -->
+    <!-- Education Section -->
     <section id="education">
       <h2>Education</h2>
       <div class="education-item">
@@ -271,7 +295,7 @@
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills Section -->
     <section id="skills">
       <h2>Skills</h2>
       <ul class="skills">
@@ -283,13 +307,14 @@
       </ul>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
       <p>Phone: (123) 456-7890</p>
       <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
     </section>
+
   </div>
 
   <!-- Footer -->
