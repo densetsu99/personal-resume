@@ -4,151 +4,297 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G Prajwal Varma – Resume</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
+    /* CSS Variables & Reset */
+    :root {
+      --primary: #2c3e50;
+      --secondary: #ecf0f1;
+      --accent: #e74c3c;
+      --text-dark: #34495e;
+      --text-light: #7f8c8d;
+      --light-alt: #ffffff;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
     }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--secondary);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    /* Sticky Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--primary);
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    nav a {
+      font-family: var(--font-heading);
+      color: var(--light-alt);
+      padding: 1rem 1.5rem;
+      display: block;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: var(--accent);
+    }
+    /* Hero Section with Clip-Path */
+    header.hero {
+      height: 300px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--light-alt);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+    header.hero h1 {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header.hero p {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    /* Main Container */
     .container {
       max-width: 800px;
-      margin: 2rem auto;
-      background: #fff;
+      margin: -80px auto 2rem;
+      background: var(--light-alt);
       padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p.title {
-      font-size: 1.2rem;
-      color: #777;
-    }
+    /* Section Titles */
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
     section h2 {
-      border-bottom: 2px solid #e1e1e1;
-      padding-bottom: 0.5rem;
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
       margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-    .experience-item,
-    .education-item {
-      margin-bottom: 1rem;
-    }
-    .experience-item h3,
-    .education-item h3 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-    .experience-item p,
-    .education-item p {
-      margin: 0.3rem 0;
-      color: #555;
-    }
-    ul.skills {
-      list-style: none;
-      padding: 0;
-    }
-    ul.skills li {
-      margin-bottom: 0.5rem;
-      padding-left: 1rem;
       position: relative;
     }
-    ul.skills li:before {
-      content: "•";
+    section h2::after {
+      content: '';
       position: absolute;
+      bottom: -5px;
       left: 0;
-      color: #333;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
     }
+    /* About */
+    #about p {
+      text-align: justify;
+    }
+    /* Timeline for Experience */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 20px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .timeline-item h3 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+    .timeline-item em {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+    /* Education Cards with Hover Effect */
+    .education-item {
+      background: var(--secondary);
+      padding: 1rem;
+      border-radius: 6px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 1rem;
+    }
+    .education-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .education-item h3 {
+      font-family: var(--font-heading);
+      margin-bottom: 0.3rem;
+    }
+    .education-item em {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+    /* Skills with CSS-Only Progress Bars */
+    ul.skills {
+      list-style: none;
+    }
+    ul.skills li {
+      margin-bottom: 1.5rem;
+    }
+    .skills span {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .bar {
+      background: var(--secondary);
+      border-radius: 20px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .bar::after {
+      content: '';
+      display: block;
+      height: 100%;
+      width: var(--progress);
+      background: var(--accent);
+      animation: fill 2s ease-in-out forwards;
+    }
+    @keyframes fill {
+      from { width: 0; }
+      to { width: var(--progress); }
+    }
+    /* Contact */
+    #contact p {
+      margin-bottom: 0.5rem;
+    }
+    /* Footer */
     footer {
       text-align: center;
       font-size: 0.9rem;
-      color: #777;
-      margin-top: 2rem;
+      color: var(--text-light);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>G Prajwal Varma</h1>
-      <p class="title">Aspiring Entrepreneur</p>
-    </header>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
+  <!-- Hero -->
+  <header class="hero">
+    <h1>G Prajwal Varma</h1>
+    <p>Aspiring Entrepreneur</p>
+  </header>
+
+  <div class="container">
+    <!-- About -->
     <section id="about">
       <h2>About Me</h2>
       <p>I am a highly ambitious individual driven by significant goals and a passion for innovation. Currently, I am pursuing Economics, Mathematics, and Statistics at SJCC alongside a BBA program at IIM Bangalore, where I am developing the skills to turn visionary ideas into reality.</p>
     </section>
 
+    <!-- Experience -->
     <section id="experience">
       <h2>Experience</h2>
-      <div class="experience-item">
-        <h3>Founder – Kaizen Club, JIRS</h3>
-        <p><em>JUNE 2022 &ndash; MAY 2024</em></p>
-        <p>Established and led a student club focused on continuous improvement and innovation, successfully raising ₹600,000 in donations within two months to fund community projects specifically donated to charitable organizations.</p>
-      </div>
-      <div class="experience-item">
-        <h3>Intern – Inspirit AI</h3>
-        <p><em>SEPT 2022 &ndash;OCT 2022</em></p>
-        <p>Completed a hands-on internship, leveraging Python and AI frameworks to develop prototypes and gain practical experience in machine learning workflows.</p>
-      </div>
-      <div class="experience-item">
-        <h3>Debate Competitor – CMUN, JIRS MUN</h3>
-        <p><em>2021 &ndash; 2024</em></p>
-        <p>Participated in multiple national-level Model United Nations debate competitions, honing advanced communication, research, and persuasion skills.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Founder – Kaizen Club, JIRS</h3>
+          <em>JUNE 2022 – MAY 2024</em>
+          <p>Established and led a student club focused on continuous improvement and innovation, successfully raising ₹600,000 in donations within two months to fund community projects specifically donated to charitable organizations.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Intern – Inspirit AI</h3>
+          <em>SEPT 2022 – OCT 2022</em>
+          <p>Completed a hands-on internship, leveraging Python and AI frameworks to develop prototypes and gain practical experience in machine learning workflows.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Debate Competitor – CMUN, JIRS MUN</h3>
+          <em>2021 – 2024</em>
+          <p>Participated in multiple national-level Model United Nations debate competitions, honing advanced communication, research, and persuasion skills.</p>
+        </div>
       </div>
     </section>
 
+    <!-- Education -->
     <section id="education">
       <h2>Education</h2>
       <div class="education-item">
         <h3>Higher Secondary (12th) – JIRS</h3>
-        <p><em>2023 &ndash; 2024</em></p>
+        <em>2023 – 2024</em>
         <p>Completed higher secondary education with a focus on core science subjects, laying the foundation for interdisciplinary studies.</p>
       </div>
       <div class="education-item">
         <h3>FY Economics, Math &amp; Statistics – SJCC</h3>
-        <p><em>2024 &ndash; Present</em></p>
+        <em>2024 – Present</em>
         <p>Engaged in rigorous coursework covering micro and macro economics, statistical analysis, and advanced mathematics.</p>
       </div>
       <div class="education-item">
         <h3>BBA – Indian Institute of Management Bangalore</h3>
-        <p><em>2024 &ndash; Present</em></p>
+        <em>2024 – Present</em>
         <p>Building business acumen through a comprehensive curriculum in management, finance, and entrepreneurship.</p>
       </div>
     </section>
 
+    <!-- Skills -->
     <section id="skills">
       <h2>Skills</h2>
       <ul class="skills">
-        <li>Leadership &amp; Team Building</li>
-        <li>Fundraising &amp; Financial Management</li>
-        <li>Effective Communication</li>
-        <li>Python Programming &amp; AI Development</li>
-        <li>Strategic Planning</li>
+        <li style="--progress: 90%;"><span>Leadership &amp; Team Building</span><div class="bar"></div></li>
+        <li style="--progress: 85%;"><span>Fundraising &amp; Financial Management</span><div class="bar"></div></li>
+        <li style="--progress: 80%;"><span>Effective Communication</span><div class="bar"></div></li>
+        <li style="--progress: 75%;"><span>Python Programming &amp; AI Development</span><div class="bar"></div></li>
+        <li style="--progress: 80%;"><span>Strategic Planning</span><div class="bar"></div></li>
       </ul>
     </section>
 
+    <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
       <p>Phone: (123) 456-7890</p>
       <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
     </section>
-
-    <footer>
-      &copy; 2025 G Prajwal Varma. All rights reserved.
-    </footer>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 G Prajwal Varma. All rights reserved.
+  </footer>
 </body>
 </html>
